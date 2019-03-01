@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'mycomponent',
+  namespace: 'wc-bootstrap',
   outputTargets:[
     { type: 'dist' },
     { type: 'docs' },
@@ -12,6 +12,14 @@ export const config: Config = {
     }
   ],
   plugins: [
-    sass()
+    sass({
+      includePaths: ["node_modules"],
+      injectGlobalPaths: [
+        'node_modules/bootstrap/scss/functions.scss',
+        'node_modules/bootstrap/scss/variables.scss',
+        'node_modules/bootstrap/scss/mixins.scss',
+        'node_modules/bootstrap/scss/root.scss'
+      ]
+    })
   ]
 };
