@@ -12,8 +12,26 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface BAlert {}
-  interface BAlertAttributes extends StencilHTMLAttributes {}
+  interface BAlert {
+    /**
+    * The alert display state
+    */
+    'show': boolean;
+    /**
+    * The alert variant
+    */
+    'variant': string;
+  }
+  interface BAlertAttributes extends StencilHTMLAttributes {
+    /**
+    * The alert display state
+    */
+    'show'?: boolean;
+    /**
+    * The alert variant
+    */
+    'variant'?: string;
+  }
 }
 
 declare global {
