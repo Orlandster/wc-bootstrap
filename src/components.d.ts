@@ -32,15 +32,30 @@ export namespace Components {
     */
     'variant'?: string;
   }
+
+  interface BBadge {
+    /**
+    * The alert variant
+    */
+    'variant': string;
+  }
+  interface BBadgeAttributes extends StencilHTMLAttributes {
+    /**
+    * The alert variant
+    */
+    'variant'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'BAlert': Components.BAlert;
+    'BBadge': Components.BBadge;
   }
 
   interface StencilIntrinsicElements {
     'b-alert': Components.BAlertAttributes;
+    'b-badge': Components.BBadgeAttributes;
   }
 
 
@@ -50,12 +65,20 @@ declare global {
     new (): HTMLBAlertElement;
   };
 
+  interface HTMLBBadgeElement extends Components.BBadge, HTMLStencilElement {}
+  var HTMLBBadgeElement: {
+    prototype: HTMLBBadgeElement;
+    new (): HTMLBBadgeElement;
+  };
+
   interface HTMLElementTagNameMap {
     'b-alert': HTMLBAlertElement
+    'b-badge': HTMLBBadgeElement
   }
 
   interface ElementTagNameMap {
     'b-alert': HTMLBAlertElement;
+    'b-badge': HTMLBBadgeElement;
   }
 
 

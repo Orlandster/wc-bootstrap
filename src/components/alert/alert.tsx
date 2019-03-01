@@ -19,7 +19,7 @@ export class Alert {
 
   render() {
     let alert = null
-    const classes = `alert alert-${this.variant}`
+    const classes = `alert alert-${this.variant}`;
 
     if(this.show) {
       alert = (
