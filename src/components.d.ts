@@ -59,6 +59,35 @@ export namespace Components {
     'items'?: {text: string, href: string, active: boolean}[] | string;
   }
 
+  interface BButtonGroup {
+    /**
+    * The button-group aria-label
+    */
+    'label': string;
+    /**
+    * The button-group role
+    */
+    'role': string;
+    /**
+    * The button direction
+    */
+    'vertical': boolean;
+  }
+  interface BButtonGroupAttributes extends StencilHTMLAttributes {
+    /**
+    * The button-group aria-label
+    */
+    'label'?: string;
+    /**
+    * The button-group role
+    */
+    'role'?: string;
+    /**
+    * The button direction
+    */
+    'vertical'?: boolean;
+  }
+
   interface BButton {
     /**
     * The block state
@@ -134,6 +163,7 @@ declare global {
     'BAlert': Components.BAlert;
     'BBadge': Components.BBadge;
     'BBreadcrumb': Components.BBreadcrumb;
+    'BButtonGroup': Components.BButtonGroup;
     'BButton': Components.BButton;
   }
 
@@ -141,6 +171,7 @@ declare global {
     'b-alert': Components.BAlertAttributes;
     'b-badge': Components.BBadgeAttributes;
     'b-breadcrumb': Components.BBreadcrumbAttributes;
+    'b-button-group': Components.BButtonGroupAttributes;
     'b-button': Components.BButtonAttributes;
   }
 
@@ -163,6 +194,12 @@ declare global {
     new (): HTMLBBreadcrumbElement;
   };
 
+  interface HTMLBButtonGroupElement extends Components.BButtonGroup, HTMLStencilElement {}
+  var HTMLBButtonGroupElement: {
+    prototype: HTMLBButtonGroupElement;
+    new (): HTMLBButtonGroupElement;
+  };
+
   interface HTMLBButtonElement extends Components.BButton, HTMLStencilElement {}
   var HTMLBButtonElement: {
     prototype: HTMLBButtonElement;
@@ -173,6 +210,7 @@ declare global {
     'b-alert': HTMLBAlertElement
     'b-badge': HTMLBBadgeElement
     'b-breadcrumb': HTMLBBreadcrumbElement
+    'b-button-group': HTMLBButtonGroupElement
     'b-button': HTMLBButtonElement
   }
 
@@ -180,6 +218,7 @@ declare global {
     'b-alert': HTMLBAlertElement;
     'b-badge': HTMLBBadgeElement;
     'b-breadcrumb': HTMLBBreadcrumbElement;
+    'b-button-group': HTMLBButtonGroupElement;
     'b-button': HTMLBButtonElement;
   }
 
