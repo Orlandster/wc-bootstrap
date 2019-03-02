@@ -156,6 +156,35 @@ export namespace Components {
     */
     'variant'?: string;
   }
+
+  interface BCard {
+    /**
+    * The image alt
+    */
+    'imgAlt': string;
+    /**
+    * The image source
+    */
+    'imgSrc': string;
+    /**
+    * The card title
+    */
+    'title': string;
+  }
+  interface BCardAttributes extends StencilHTMLAttributes {
+    /**
+    * The image alt
+    */
+    'imgAlt'?: string;
+    /**
+    * The image source
+    */
+    'imgSrc'?: string;
+    /**
+    * The card title
+    */
+    'title'?: string;
+  }
 }
 
 declare global {
@@ -165,6 +194,7 @@ declare global {
     'BBreadcrumb': Components.BBreadcrumb;
     'BButtonGroup': Components.BButtonGroup;
     'BButton': Components.BButton;
+    'BCard': Components.BCard;
   }
 
   interface StencilIntrinsicElements {
@@ -173,6 +203,7 @@ declare global {
     'b-breadcrumb': Components.BBreadcrumbAttributes;
     'b-button-group': Components.BButtonGroupAttributes;
     'b-button': Components.BButtonAttributes;
+    'b-card': Components.BCardAttributes;
   }
 
 
@@ -206,12 +237,19 @@ declare global {
     new (): HTMLBButtonElement;
   };
 
+  interface HTMLBCardElement extends Components.BCard, HTMLStencilElement {}
+  var HTMLBCardElement: {
+    prototype: HTMLBCardElement;
+    new (): HTMLBCardElement;
+  };
+
   interface HTMLElementTagNameMap {
     'b-alert': HTMLBAlertElement
     'b-badge': HTMLBBadgeElement
     'b-breadcrumb': HTMLBBreadcrumbElement
     'b-button-group': HTMLBButtonGroupElement
     'b-button': HTMLBButtonElement
+    'b-card': HTMLBCardElement
   }
 
   interface ElementTagNameMap {
@@ -220,6 +258,7 @@ declare global {
     'b-breadcrumb': HTMLBBreadcrumbElement;
     'b-button-group': HTMLBButtonGroupElement;
     'b-button': HTMLBButtonElement;
+    'b-card': HTMLBCardElement;
   }
 
 
