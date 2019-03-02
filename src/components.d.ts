@@ -61,9 +61,21 @@ export namespace Components {
 
   interface BButton {
     /**
-    * The button outline
+    * The block state
     */
-    'outline': boolean;
+    'block': boolean;
+    /**
+    * The button state
+    */
+    'disabled': boolean;
+    /**
+    * The button element
+    */
+    'el': string;
+    /**
+    * The button link for the a tag element
+    */
+    'href': string;
     /**
     * The button size
     */
@@ -73,15 +85,31 @@ export namespace Components {
     */
     'type': string;
     /**
+    * The button value for elements of type input
+    */
+    'value': string;
+    /**
     * The button variant
     */
     'variant': string;
   }
   interface BButtonAttributes extends StencilHTMLAttributes {
     /**
-    * The button outline
+    * The block state
     */
-    'outline'?: boolean;
+    'block'?: boolean;
+    /**
+    * The button state
+    */
+    'disabled'?: boolean;
+    /**
+    * The button element
+    */
+    'el'?: string;
+    /**
+    * The button link for the a tag element
+    */
+    'href'?: string;
     /**
     * The button size
     */
@@ -90,6 +118,10 @@ export namespace Components {
     * The button type
     */
     'type'?: string;
+    /**
+    * The button value for elements of type input
+    */
+    'value'?: string;
     /**
     * The button variant
     */
