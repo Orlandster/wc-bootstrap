@@ -58,6 +58,43 @@ export namespace Components {
     */
     'items'?: {text: string, href: string, active: boolean}[] | string;
   }
+
+  interface BButton {
+    /**
+    * The button outline
+    */
+    'outline': boolean;
+    /**
+    * The button size
+    */
+    'size': string;
+    /**
+    * The button type
+    */
+    'type': string;
+    /**
+    * The button variant
+    */
+    'variant': string;
+  }
+  interface BButtonAttributes extends StencilHTMLAttributes {
+    /**
+    * The button outline
+    */
+    'outline'?: boolean;
+    /**
+    * The button size
+    */
+    'size'?: string;
+    /**
+    * The button type
+    */
+    'type'?: string;
+    /**
+    * The button variant
+    */
+    'variant'?: string;
+  }
 }
 
 declare global {
@@ -65,12 +102,14 @@ declare global {
     'BAlert': Components.BAlert;
     'BBadge': Components.BBadge;
     'BBreadcrumb': Components.BBreadcrumb;
+    'BButton': Components.BButton;
   }
 
   interface StencilIntrinsicElements {
     'b-alert': Components.BAlertAttributes;
     'b-badge': Components.BBadgeAttributes;
     'b-breadcrumb': Components.BBreadcrumbAttributes;
+    'b-button': Components.BButtonAttributes;
   }
 
 
@@ -92,16 +131,24 @@ declare global {
     new (): HTMLBBreadcrumbElement;
   };
 
+  interface HTMLBButtonElement extends Components.BButton, HTMLStencilElement {}
+  var HTMLBButtonElement: {
+    prototype: HTMLBButtonElement;
+    new (): HTMLBButtonElement;
+  };
+
   interface HTMLElementTagNameMap {
     'b-alert': HTMLBAlertElement
     'b-badge': HTMLBBadgeElement
     'b-breadcrumb': HTMLBBreadcrumbElement
+    'b-button': HTMLBButtonElement
   }
 
   interface ElementTagNameMap {
     'b-alert': HTMLBAlertElement;
     'b-badge': HTMLBBadgeElement;
     'b-breadcrumb': HTMLBBreadcrumbElement;
+    'b-button': HTMLBButtonElement;
   }
 
 
