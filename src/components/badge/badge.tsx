@@ -8,13 +8,13 @@ import { Component, Prop } from '@stencil/core';
 
 export class Badge {
   /**
-   * The alert variant
+   * The badge variant
    */
   @Prop() variant: string = 'primary';
 
   render() {
     const classes = `badge badge-${this.variant}`;
-    
+
     return (
       <span class={classes}>
         <slot />

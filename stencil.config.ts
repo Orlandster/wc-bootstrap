@@ -17,8 +17,7 @@ export const config: Config = {
       injectGlobalPaths: [
         'node_modules/bootstrap/scss/functions.scss',
         'node_modules/bootstrap/scss/variables.scss',
-        'node_modules/bootstrap/scss/mixins.scss',
-        'node_modules/bootstrap/scss/root.scss'
+        'node_modules/bootstrap/scss/mixins.scss'
       ]
     })
   ]

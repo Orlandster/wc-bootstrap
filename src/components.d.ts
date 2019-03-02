@@ -35,15 +35,28 @@ export namespace Components {
 
   interface BBadge {
     /**
-    * The alert variant
+    * The badge variant
     */
     'variant': string;
   }
   interface BBadgeAttributes extends StencilHTMLAttributes {
     /**
-    * The alert variant
+    * The badge variant
     */
     'variant'?: string;
+  }
+
+  interface BBreadcrumb {
+    /**
+    * The breadcrumb items
+    */
+    'items': {text: string, href: string, active: boolean}[] | string;
+  }
+  interface BBreadcrumbAttributes extends StencilHTMLAttributes {
+    /**
+    * The breadcrumb items
+    */
+    'items'?: {text: string, href: string, active: boolean}[] | string;
   }
 }
 
@@ -51,11 +64,13 @@ declare global {
   interface StencilElementInterfaces {
     'BAlert': Components.BAlert;
     'BBadge': Components.BBadge;
+    'BBreadcrumb': Components.BBreadcrumb;
   }
 
   interface StencilIntrinsicElements {
     'b-alert': Components.BAlertAttributes;
     'b-badge': Components.BBadgeAttributes;
+    'b-breadcrumb': Components.BBreadcrumbAttributes;
   }
 
 
@@ -71,14 +86,22 @@ declare global {
     new (): HTMLBBadgeElement;
   };
 
+  interface HTMLBBreadcrumbElement extends Components.BBreadcrumb, HTMLStencilElement {}
+  var HTMLBBreadcrumbElement: {
+    prototype: HTMLBBreadcrumbElement;
+    new (): HTMLBBreadcrumbElement;
+  };
+
   interface HTMLElementTagNameMap {
     'b-alert': HTMLBAlertElement
     'b-badge': HTMLBBadgeElement
+    'b-breadcrumb': HTMLBBreadcrumbElement
   }
 
   interface ElementTagNameMap {
     'b-alert': HTMLBAlertElement;
     'b-badge': HTMLBBadgeElement;
+    'b-breadcrumb': HTMLBBreadcrumbElement;
   }
 
 
