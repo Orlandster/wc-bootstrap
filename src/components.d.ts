@@ -157,34 +157,8 @@ export namespace Components {
     'variant'?: string;
   }
 
-  interface BCard {
-    /**
-    * The image alt
-    */
-    'imgAlt': string;
-    /**
-    * The image source
-    */
-    'imgSrc': string;
-    /**
-    * The card title
-    */
-    'title': string;
-  }
-  interface BCardAttributes extends StencilHTMLAttributes {
-    /**
-    * The image alt
-    */
-    'imgAlt'?: string;
-    /**
-    * The image source
-    */
-    'imgSrc'?: string;
-    /**
-    * The card title
-    */
-    'title'?: string;
-  }
+  interface BCard {}
+  interface BCardAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {

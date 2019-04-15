@@ -7,29 +7,20 @@ import { Component, Prop } from '@stencil/core';
 })
 
 export class Card {
-  /**
-   * The card title
-   */
-  @Prop() title: string;
-
-  /**
-   * The image source
-   */
-  @Prop() imgSrc: string;
-
-  /**
-   * The image alt
-   */
-  @Prop() imgAlt: string;
-
   render() {
     const classes = `card`;
 
     return (
       <div class={classes}>
+        <header class="card-header">
+          <slot name="header" />
+        </header>
         <div class="card-body">
-            <slot name="body" />
+          <slot name="body" />
         </div>
+        <footer class="card-footer">
+          <slot name="footer" />
+        </footer>
       </div>
     )
   }
